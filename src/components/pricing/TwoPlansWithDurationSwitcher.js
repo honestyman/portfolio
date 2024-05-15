@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import { useNavigate } from "react-router-dom";
 import tw from "twin.macro";
 import styled from "styled-components";
 import { css } from "styled-components/macro"; //eslint-disable-line
@@ -6,146 +7,146 @@ import { SectionHeading, Subheading as SubheadingBase } from "components/misc/He
 import { SectionDescription } from "components/misc/Typography.js";
 import { PrimaryButton as PrimaryButtonBase } from "components/misc/Buttons.js";
 import { Container, ContentWithPaddingXl } from "components/misc/Layouts.js";
-import { ReactComponent as SvgDecoratorBlob1 } from "images/svg-decorator-blob-6.svg";
-import { ReactComponent as SvgDecoratorBlob2 } from "images/svg-decorator-blob-7.svg";
+import SpinPool from "../../images/project/01.png";
+import SMR from "../../images/project/02.png";
+import Gydedao from "../../images/project/03.png";
+import XDX from "../../images/project/04.png";
+import NFTb from "../../images/project/05.png";
+import Kupad from "../../images/project/06.png";
+import Duck from "../../images/project/07.png";
+import ABA from "../../images/project/08.png";
+import Cibolo from "../../images/project/09.png";
+import Car from "../../images/project/10.png";
+import Insurance from "../../images/project/11.png";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
 
 const HeaderContainer = tw.div`w-full flex flex-col items-center`;
 const Subheading = tw(SubheadingBase)`mb-4`;
-const Heading = tw(SectionHeading)`w-full`;
+const Heading = tw(SectionHeading)`w-full mb-10`;
 const Description = tw(SectionDescription)`w-full text-center`;
 
-const PlanDurationSwitcher = tw.div`block w-full max-w-xs sm:inline-block sm:w-auto border-2 rounded-full px-1 py-1 mt-8`;
-const SwitchButton = styled.button`
-  ${tw`w-1/2 sm:w-32 px-4 sm:px-8 py-3 rounded-full focus:outline-none text-sm font-bold text-gray-700 transition duration-300`}
-  ${props => props.active && tw`bg-primary-500 text-gray-100`}
-`;
+const ProjectContainer = tw.div`w-full flex justify-center items-center flex-col md:flex-row items-center md:items-start relative`;
 
-const PlansContainer = tw.div`flex justify-center flex-col md:flex-row items-center md:items-start relative`;
-const Plan = styled.div`
-  ${tw`w-full max-w-72 mt-16 md:mr-12 md:last:mr-0 text-center px-8 rounded-lg relative text-gray-900 bg-white flex flex-col shadow-raised`}
-
-  ${props =>
-    props.featured &&
-    css`
-      ${tw`border-2 border-gray-200 shadow-none`}
-    `}
-`;
-
-const PlanHeader = styled.div`
-  ${tw`flex flex-col leading-relaxed py-8 -mx-8 bg-gray-100 rounded-t-lg`}
-  .name {
-    ${tw`font-bold text-xl`}
-  }
-  .price {
-    ${tw`font-bold text-4xl sm:text-5xl my-1`}
-  }
-  .slash {
-    ${tw`text-xl text-gray-500`}
-  }
-  .duration {
-    ${tw`lowercase text-gray-500 font-medium tracking-widest`}
-  }
-  .mainFeature {
-    ${tw`text-gray-500 text-sm font-medium tracking-wide`}
-  }
-`;
-const PlanFeatures = styled.div`
-  ${tw`flex flex-col -mx-8 px-8 py-8 flex-1 text-sm`}
-  .feature {
-    ${tw`mt-5 first:mt-0 font-semibold text-gray-500`}
-  }
-`;
-
-const PlanAction = tw.div`px-4 pb-8`;
-const BuyNowButton = styled(PrimaryButtonBase)`
-  ${tw`rounded-full tracking-wider py-4 w-full text-sm hover:shadow-xl transform hocus:translate-x-px hocus:-translate-y-px focus:shadow-outline`}
-`;
-
-const DecoratorBlob1 = styled(SvgDecoratorBlob1)`
-  ${tw`pointer-events-none -z-20 absolute left-0 bottom-0 h-64 w-64 opacity-25 transform -translate-x-2/3 -translate-y-1/2`}
-`;
-const DecoratorBlob2 = styled(SvgDecoratorBlob2)`
-  ${tw`pointer-events-none -z-20 absolute right-0 top-0 h-64 w-64 opacity-25 transform translate-x-2/3 translate-y-1/2 fill-current text-teal-300`}
-`;
 
 export default ({
-  subheading = "Pricing",
+  subheading = "My Creation",
   heading = "Flexible Plans.",
-  description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  plans = null,
-  primaryButtonText = "Buy Now",
-  planDurations = [
-    {
-      text: "Month",
-      switcherText: "Monthly",
-    },
-    {
-      text: "Year",
-      switcherText: "Yearly",
-    }
-  ]
+  plans = null
 }) => {
-  const defaultPlans = [
+
+  const navigate = useNavigate();
+
+  const carouselList = [
     {
-      name: "Free Plan",
-      durationPrices: ["$0", "$0"],
-      mainFeature: "For Personal Blogs",
-      features: ["30 Templates", "7 Landing Pages", "12 Internal Pages", "Basic Assistance"]
+      image: SpinPool,
+      title: "Snippool",
+      description: "Snippool is an NFT AMM inspired by Sudoswap where users can create pools, buy and sell NFTs, add pools to vaults to get rewards.",
+      technology: "Next.js, Redux, Mateial UI, Styled Components, Apollo GraphQL, Subgraph, Solidity, Wagmi, Rainbowkit",
+      link: "https://www.snippool.xyz/Collections"
     },
     {
-      name: "Pro Plan",
-      durationPrices: ["$49", "$499"],
-      mainFeature: "Suited for Production Websites",
-      features: ["60 Templates", "8 Landing Pages", "22 Internal Pages", "Priority Assistance", "Lifetime Updates"],
-      featured: true
+      image: SMR,
+      title: "SMR NFT Launchpad",
+      description: "NFT Collection launchapd on Shimmer EVM network where users can easily launch NFT collections with custom settings like royalty, affiliate, bulk discount, etc.",
+      technology: "Next.js, Redux, Tailwind CSS, Apollo GraphQL, Subgraph, Solidity, Wagmi, Rainbowkit, Nest.js, PostgreSQL, Prisma",
+      link: "https://launchpad.snippool.xyz/"
+    },
+    {
+      image: Gydedao,
+      title: "Gydedao",
+      description: "Gydedao is an NFT-gated website that provides users with helpful information about their lives. They offer resources on topics such as investments, savings, insurance, planning for retirement, taxes, and more. They provide resources from experienced professionals who can assist in guiding users through their financial decisions. The website also offers up-to-date news and insights from the financial world.",
+      technology: "React.js, Node/Express, MySQL, TailwindCSS, Google Map API, NEAR CLI",
+      link: "https://gydedao.netlify.app/"
+    },
+    {
+      image: XDX,
+      title: "XDX Exchange",
+      description: "XDX is a decentralized exchange deployed on Avalanche with low swap fees and no price impact. It engages a liquidity shared mechanism called XDX to faciliate trades. XDX is the utility and governance token of the protocol.",
+      technology: "React.js, Tailwind CSS, Web3-React, Ethers.js, Solidity, Hardhat, Subgraph",
+      link: "https://xdx-frontend.vercel.app/#/dashboard"
+    },
+    {
+      image: NFTb,
+      title: "NFTb",
+      description: "NFTb is an NFT marketplace running on Binance Smart Chain. It provides services such as listing, sales and auction of NFTs. It also has DeFi as a service which empowers users to earn passively and support projects with customized staking and farming services. On the other hand, NFT and token launchpad is also part of the platform to help projects and creators launch in a fair way.",
+      technology: "React/Next.js, Node/Express, MongoDB, SCSS, Web3.js, Nginx",
+      link: "https://pixelrealm.io/"
+    },
+    {
+      image: Kupad,
+      title: "Kupad Finance",
+      description: "KUPAD is a protocol built on Kucoin blockchain with the sole aim of helping projects raise capital in a decentralized way, an easy approach for both investors and project to either invest or raise funds.",
+      technology: "React.js, Material UI, Styled Components, Ethers.js",
+      link: "https://ku-pad.netlify.app/"
+    },
+    {
+      image: Duck,
+      title: "Rubber Duck Bath Party",
+      description: "NFT collection of 10, 000 ducks on Ethereum network.",
+      technology: "Solidity, Hardhat",
+      link: "https://duck.art/"
+    },
+    {
+      image: ABA,
+      title: "ABA Engine",
+      description: "ABA Engine is a platform for clients to book services of providers depending on each other's availability, authorization, insurance provider, location and other criteria. It has seamless client intake and provider onboarding process.",
+      technology: "React.js, Redux, Material UI, Styled Components, Express.js, PostgreSQL, Typeorm, Socket.io, Stripe, Sentry",
+      link: "https://schedule.abaengine.com/"
+    },
+    {
+      image: Cibolo,
+      title: "Cibolo",
+      description: "A web based platform that is designed to help financial firms and advisors enhance portfolio management experience specifically in the alternative investment industry.",
+      technology: "React.js, Redux, Material UI, Styled Components, Express.js, PostgreSQL",
+      link: "https://ciboloai.com/"
+    },
+    {
+      image: Car,
+      title: "Car Parts Service Platform",
+      description: "CarParts is an online automotive parts store that offers a wide selection of automotive parts, accessories, and tools for cars, trucks, and SUVs. Customers can easily find what they need by searching through the available categories, or by using the search bar to find the right part for their vehicle. The website is easy to navigate, and provides detailed product descriptions and images to help customers make an informed purchase. It also offers customer support, detailed shipping information, and special offers and discounts.",
+      technology: "React.js, GSAP, PHP, PostgreSQL, Styled Components, Payment Integration(Paypal, Apple Pay, Google Pay, Credit Card)",
+      link: "https://www.carparts.com/"
+    },
+    {
+      image: Insurance,
+      title: "Insurance Service Platform",
+      description: "Application where user get insurance quotes by choosing their insurance category and add required data. It provides various insurance services for automobiles, health, life, home, etc.",
+      technology: "React.js, Ionic, Node/Express, Google Cloud Platform",
+      link: "https://veronicasquote.com/"
     }
   ];
-
-  if (!plans) plans = defaultPlans;
-
-  const [activeDurationIndex, setActiveDurationIndex] = useState(0);
-
+ 
   return (
     <Container>
       <ContentWithPaddingXl>
         <HeaderContainer>
           {subheading && <Subheading>{subheading}</Subheading>}
           <Heading>{heading}</Heading>
-          {description && <Description>{description}</Description>}
-        <PlanDurationSwitcher>
-          {planDurations.map((planDuration, index) => (
-            <SwitchButton active={activeDurationIndex === index} key={index} onClick={() => setActiveDurationIndex(index)}>{planDuration.switcherText}</SwitchButton>
-          ))}
-        </PlanDurationSwitcher>
         </HeaderContainer>
-        <PlansContainer>
-          {plans.map((plan, index) => (
-            <Plan key={index} featured={plan.featured}>
-              <PlanHeader>
-                <span className="priceAndDuration">
-                  <span className="price">{plan.durationPrices[activeDurationIndex]}</span>
-                  <span className="slash"> / </span>
-                  <span className="duration">{planDurations[activeDurationIndex].text}</span>
-                </span>
-                <span className="name">{plan.name}</span>
-                <span className="mainFeature">{plan.mainFeature}</span>
-              </PlanHeader>
-              <PlanFeatures>
-                {plan.features.map((feature, index) => (
-                  <span key={index} className="feature">
-                    {feature}
-                  </span>
-                ))}
-              </PlanFeatures>
-              <PlanAction>
-                <BuyNowButton>{primaryButtonText}</BuyNowButton>
-              </PlanAction>
-            </Plan>
-          ))}
-        </PlansContainer>
+        <ProjectContainer>
+          {/* <div className="w-1/2"> */}
+            <Carousel tw="w-full" autoPlay={true} infiniteLoop={true}>
+              {
+                carouselList.map((carousel, index)=>{
+                  return(
+                      <a href={carousel.link} target="_blank">
+                        <div tw="border-2 rounded-xl p-5">
+                        <img src={carousel.image} />
+                        <div tw="w-full flex flex-col text-left bg-gray-100 lg:py-5 lg:px-10">
+                            <label tw="text-xl font-bold">{carousel.title}</label>
+                            <label tw="text-sm">{carousel.description}</label>
+                            <label tw="text-sm"><span tw="font-bold">Technologies: </span>{carousel.technology}</label>
+                        </div>
+                      </div>
+                      </a>
+                  );
+                })
+              }
+            </Carousel>
+          {/* </div> */}
+        </ProjectContainer>
       </ContentWithPaddingXl>
-      <DecoratorBlob1 />
-      <DecoratorBlob2 />
     </Container>
   );
 };

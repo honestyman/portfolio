@@ -6,16 +6,18 @@ import styled from "styled-components";
 import { css } from "styled-components/macro"; //eslint-disable-line
 import { SectionHeading, Subheading as SubheadingBase } from "components/misc/Headings.js";
 import { Container, ContentWithPaddingXl } from "components/misc/Layouts.js";
-import loveIllustrationImageSrc from "images/love-illustration.svg";
+import ClientMax from "images/clients/max.jpg";
+import ClientBen from "images/clients/ben.jpg";
+import ClientHui from "images/clients/hui.jpg";
+import ClientBoston from "images/clients/boston.jpg";
 import { ReactComponent as StarIconBase } from "images/star-icon.svg";
 import { ReactComponent as ArrowLeftIcon } from "images/arrow-left-3-icon.svg";
 import { ReactComponent as ArrowRightIcon } from "images/arrow-right-3-icon.svg";
 
 const Row = tw.div`flex flex-col md:flex-row justify-between items-center`;
 const Column = tw.div`w-full max-w-md mx-auto md:max-w-none md:mx-0`;
-const ImageColumn = tw(Column)`md:w-5/12 xl:w-6/12 flex-shrink-0 relative`;
 const TextColumn = styled(Column)(props => [
-  tw`md:w-7/12 xl:w-6/12 mt-16 md:mt-0`,
+  tw`md:w-full xl:w-full mt-16 md:mt-0`,
   props.textOnLeft ? tw`md:pr-12 lg:pr-16 md:order-first` : tw`md:pl-12 lg:pl-16 md:order-last`
 ]);
 
@@ -69,34 +71,46 @@ const ControlButton = styled.button`
 `;
 
 export default ({
-  imageSrc = loveIllustrationImageSrc,
-  imageRounded = true,
-  imageBorder = false,
-  imageShadow = false,
+
   subheading = "Testimonials",
   heading = "Our Clients Love Us.",
-  description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam.",
   textOnLeft = false,
   testimonials = [
     {
       stars: 5,
-      profileImageSrc:
-        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3.25&w=512&h=512&q=80",
-      heading: "Amazing User Experience",
+      profileImageSrc: ClientMax,
+      heading: "Would definitely recommend working with him in the future!",
       quote:
-        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
-      customerName: "Charlotte Hale",
-      customerTitle: "CEO, Delos Inc."
+        "“Haorui has been a great partner throughout the course of our build of our MVP. He was ready to dive right in and learned the NEAR SDK with little guidance, implementing complex features and on schedule within budget. His can do attitude is wonderful and he is very responsive to communications. Would definitely recommend working with him in the future!”",
+      customerName: "Max Goodman",
+      customerTitle: "Founder & Chief at Gyde"
     },
     {
       stars: 5,
-      profileImageSrc:
-        "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.25&w=512&h=512&q=80",
-      heading: "Love the Developer Experience and Design Principles !",
+      profileImageSrc:ClientBen,
+      heading: "I highly recommend him for any Web development work!",
       quote:
-        "Sinor Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
-      customerName: "Adam Cuppy",
-      customerTitle: "Founder, EventsNYC"
+        "“I had the pleasure of working with Haorui on a company website project, where he served as the sole developer. The website was built using React, and Haorui played a crucial role in its development and maintenance from start to finish. Throughout the project, Haorui demonstrated a strong understanding of web technologies and was able to effectively integrate 3rd party services via their API's. He showed excellent problem-solving skills and was a true team player, consistently displaying a strong work ethic and willingness to take on any challenge. I was very impressed with Haorui's skills and dedication to the project, and I look forward to our ongoing work together. He is a valuable asset to any team, and I highly recommend him for any Web development work.”",
+      customerName: "Ben Blair",
+      customerTitle: "Director at TraderDeepDive"
+    },
+    {
+      stars: 5,
+      profileImageSrc:ClientHui,
+      heading: "Whether you are working web2 or web3 for your startup, Haorui is an amazing developer talent and rising tech lead I would like to recommend for any startup team!",
+      quote:
+        "“Haorui is an experienced developer I really enjoyed working with. While we were working together to explore DeFi stacks, Haorui has demonstrated great problem solving skills and fast execution to navigate both solution domain and tech domain through building working prototypes. I am very impressed his hands-on and system thinking. His high performing work has enabled us to make practical decision quicker as a product engineering team. Whether you are working web2 or web3 for your startup, Haorui is an amazing developer talent and rising tech lead I would like to recommend for any startup team.”",
+      customerName: "Hui Huang",
+      customerTitle: "Entrepreneur & Startup CTO at Skyline Dev Labs"
+    },
+    {
+      stars: 5,
+      profileImageSrc:ClientBoston,
+      heading: "I highly recommend Haorui to anyone seeking a skilled and knowledgeable developer in web3 integration, blockchain, and subgraph development!",
+      quote:
+        "“I've enjoyed working with Haorui on a web3 project. He is a true expert in the field of web3 integration and blockchain technology. His deep knowledge and expertise have been crutial in our project's success. He has an excellent ability to understand complex blockchain concepts and turn them into practical solutions. One of Haorui's best qualities is his proficiency in developing subgraphs. His work in this area has significantly improved our project's data indexing and querying capabilities. I highly recommend Haorui to anyone seeking a skilled and knowledgeable developer in web3 integration, blockchain, and subgraph development.”",
+      customerName: "Boston TCHOUKOUA",
+      customerTitle: "Head Of Development at IotaOrigin UG"
     }
   ]
 }) => {
@@ -106,13 +120,9 @@ export default ({
     <Container>
       <ContentWithPaddingXl>
         <Row>
-          <ImageColumn>
-            <Image src={imageSrc} imageBorder={imageBorder} imageShadow={imageShadow} imageRounded={imageRounded} />
-          </ImageColumn>
           <TextColumn textOnLeft={textOnLeft}>
             <Subheading>{subheading}</Subheading>
             <Heading>{heading}</Heading>
-            <Description>{description}</Description>
             <TestimonialSlider arrows={false} ref={setSliderRef}>
               {testimonials.map((testimonial, index) => (
                 <Testimonial key={index}>

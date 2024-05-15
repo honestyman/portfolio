@@ -9,12 +9,8 @@ import defaultCardImage from "../../images/shield-icon.svg";
 
 import { ReactComponent as SvgDecoratorBlob3 } from "../../images/svg-decorator-blob-3.svg";
 
-import SupportIconImage from "../../images/support-icon.svg";
-import ShieldIconImage from "../../images/shield-icon.svg";
-import CustomizeIconImage from "../../images/customize-icon.svg";
-import FastIconImage from "../../images/fast-icon.svg";
-import ReliableIconImage from "../../images/reliable-icon.svg";
-import SimpleIconImage from "../../images/simple-icon.svg";
+import WebSiteImage from "../../images/service/web.jpg";
+import BlockSiteImage from "../../images/service/blockchain.png";
 
 const Container = tw.div`relative`;
 
@@ -24,15 +20,15 @@ const ThreeColumnContainer = styled.div`
 const Heading = tw(SectionHeading)`w-full`;
 
 const Column = styled.div`
-  ${tw`md:w-1/2 lg:w-1/3 px-6 flex`}
+  ${tw`md:w-1/2 lg:w-1/2 px-6 flex`}
 `;
 
 const Card = styled.div`
-  ${tw`flex flex-col mx-auto max-w-xs items-center px-6 py-10 border-2 border-dashed border-primary-500 rounded-lg mt-12`}
+  ${tw`flex flex-col mx-auto max-w-xl items-center px-6 py-10 border-2 border-dashed border-primary-500 rounded-lg mt-12`}
   .imageContainer {
-    ${tw`border-2 border-primary-500 text-center rounded-full p-6 flex-shrink-0 relative`}
+    ${tw`text-center flex-shrink-0 relative`}
     img {
-      ${tw`w-8 h-8`}
+      ${tw`w-32 h-32`}
     }
   }
 
@@ -64,21 +60,20 @@ export default () => {
 
   const cards = [
     {
-      imageSrc: ShieldIconImage,
-      title: "Ads Management",
-      description: "We create and manage ads that you need, from creation to deployment. Lorem ipsum donor sit amet consicou."
+      imageSrc: WebSiteImage,
+      title: "Web Development",
+      description: "As a web developer, my goal is to design and build websites that are visually appealing, user-friendly, and fully functional. I specialize in both the front-end and back-end aspects of web development, which means I have expertise in both the design and technical aspects of building a website. I have a strong understanding of web design principles and am skilled at creating responsive and mobile-friendly websites that work well on a variety of devices."
     },
-    { imageSrc: SupportIconImage, title: "Video Marketing" },
-    { imageSrc: CustomizeIconImage, title: "Customer Relation" },
-    { imageSrc: ReliableIconImage, title: "Product Outreach" },
-    { imageSrc: FastIconImage, title: "PR Campaign" },
-    { imageSrc: SimpleIconImage, title: "Product Expansion" }
+    { imageSrc: BlockSiteImage, 
+      title: "BlockChain Development",
+      description: "I have expertise in the Solidity programming language, which is commonly used to write smart contracts for the Ethereum blockchain. I also have a strong understanding of blockchain technology and how it can be leveraged to create robust and reliable smart contracts. In my smart contract development projects, I work closely with clients to understand their needs and develop customized contracts that meet their specific requirements. I also perform testing and debugging to ensure the contracts are functional and error-free before deployment."
+    }
   ];
 
   return (
     <Container>
       <ThreeColumnContainer>
-        <Heading>Our Professional <span tw="text-primary-500">Services</span></Heading>
+        <Heading>My <span tw="text-primary-500">Services</span></Heading>
         {cards.map((card, i) => (
           <Column key={i}>
             <Card>

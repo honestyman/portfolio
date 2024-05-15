@@ -10,12 +10,19 @@ import defaultCardImage from "images/shield-icon.svg";
 
 import { ReactComponent as SvgDecoratorBlob3 } from "images/svg-decorator-blob-3.svg";
 
-import SupportIconImage from "images/support-icon.svg";
-import ShieldIconImage from "images/shield-icon.svg";
-import CustomizeIconImage from "images/customize-icon.svg";
-import FastIconImage from "images/fast-icon.svg";
-import ReliableIconImage from "images/reliable-icon.svg";
-import SimpleIconImage from "images/simple-icon.svg";
+import ReduxIconImage from "images/skills/redux.png";
+import ReactIconImage from "images/skills/react.png";
+
+import NextIconImage from "images/skills/nextjs.png";
+import MysqlIconImage from "images/skills/mysql.png";
+import NodeIconImage from "images/skills/node.png";
+import JangoIconImage from "images/skills/django.png";
+import MongodbIconImage from "images/skills/mongodb.png";
+import FirebaseIconImage from "images/skills/firebase.png";
+import FlutterIconImage from "images/skills/flutter.png";
+import NativeIconImage from "images/skills/react native.png";
+import SolidityIconImage from "images/skills/solidity.png";
+import Web3IconImage from "images/skills/web3.png";
 
 const Container = tw.div`relative`;
 
@@ -35,9 +42,9 @@ const Column = styled.div`
 const Card = styled.div`
   ${tw`flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left h-full mx-4 px-2 py-8`}
   .imageContainer {
-    ${tw`border text-center rounded-full p-5 flex-shrink-0`}
+    ${tw`border text-center rounded-full p-2 flex-shrink-0`}
     img {
-      ${tw`w-6 h-6`}
+      ${tw`w-10 h-10`}
     }
   }
 
@@ -58,7 +65,7 @@ const DecoratorBlob = styled(SvgDecoratorBlob3)`
   ${tw`pointer-events-none absolute right-0 bottom-0 w-64 opacity-25 transform translate-x-32 translate-y-48 `}
 `;
 
-export default ({ cards = null, heading = "Amazing Features", subheading = "Features", description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." }) => {
+export default ({ cards = null, heading = "My Skills"}) => {
   /*
    * This componets has an array of object denoting the cards defined below. Each object in the cards array can have the key (Change it according to your need, you can also add more objects to have more cards in this feature component) or you can directly pass this using the cards prop:
    *  1) imageSrc - the image shown at the top of the card
@@ -69,15 +76,21 @@ export default ({ cards = null, heading = "Amazing Features", subheading = "Feat
 
   const defaultCards = [
     {
-      imageSrc: ShieldIconImage,
-      title: "Secure",
-      description: "We strictly only deal with vendors that provide top notch security."
+      imageSrc: ReactIconImage,
+      title: "React",
+      description: "Frontend Development"
     },
-    { imageSrc: SupportIconImage, title: "24/7 Support" },
-    { imageSrc: CustomizeIconImage, title: "Customizable" },
-    { imageSrc: ReliableIconImage, title: "Reliable" },
-    { imageSrc: FastIconImage, title: "Fast" },
-    { imageSrc: SimpleIconImage, title: "Easy" }
+    { imageSrc: ReduxIconImage, title: "Redux", description: "State Management" },
+    { imageSrc: NextIconImage, title: "Next.js", description: "Full Stack Development" },
+    { imageSrc: JangoIconImage, title: "Django", description: "Full Stack Development" },
+    { imageSrc: NodeIconImage, title: "Node js", description: "Backend Development" },
+    { imageSrc: MysqlIconImage, title: "MySQL", description: "Relational Database" },
+    { imageSrc: MongodbIconImage, title: "MongoDB", description: "Non-relational Database" },
+    { imageSrc: FirebaseIconImage, title: "Firebase", description: "Cloud-hosted NoSQL database" },
+    { imageSrc: FlutterIconImage, title: "Flutter", description: "App Development" },
+    { imageSrc: NativeIconImage, title: "React Native", description: "App Development" },
+    { imageSrc: SolidityIconImage, title: "Solididy", description: "Smart Contracts" },
+    { imageSrc: Web3IconImage, title: "Web3", description: "Web3 integration" },
   ];
 
   if (!cards) cards = defaultCards;
@@ -85,9 +98,7 @@ export default ({ cards = null, heading = "Amazing Features", subheading = "Feat
   return (
     <Container>
       <ThreeColumnContainer>
-        {subheading && <Subheading>{subheading}</Subheading>}
         <Heading>{heading}</Heading>
-        {description && <Description>{description}</Description>}
         <VerticalSpacer />
         {cards.map((card, i) => (
           <Column key={i}>

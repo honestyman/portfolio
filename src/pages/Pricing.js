@@ -10,7 +10,7 @@ export default () => {
   return (
     <AnimationRevealPage>
       <Header />
-      <Pricing />
+      {/* <Pricing /> */}
       <Testimonial
         heading="Our Paying Customers"
       />
