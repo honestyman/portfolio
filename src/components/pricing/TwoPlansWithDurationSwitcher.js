@@ -34,7 +34,7 @@ export default ({
   heading = "Flexible Plans.",
   plans = null
 }) => {
-
+// 
   const navigate = useNavigate();
 
   const carouselList = [

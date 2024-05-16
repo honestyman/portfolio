@@ -5,7 +5,7 @@ import { css } from "styled-components/macro"; //eslint-disable-line
 import { IoMailOpenOutline, IoLogoDiscord } from "react-icons/io5";
 import { FaGithub, FaPhoneSquare, FaTelegram } from "react-icons/fa";
 import SimpleContactUs from "components/forms/SimpleContactUs";
-
+// 
 const Container = tw.div`relative bg-gray-900 text-gray-700 -mb-8 -mx-8 px-8`;
 const LinkContainer = tw.div`relative flex justify-center items-center text-gray-700 pb-20 -mx-8 px-8`;
 const ItemDiv = tw.div`flex justify-center items-center text-gray-200 mx-10`;
