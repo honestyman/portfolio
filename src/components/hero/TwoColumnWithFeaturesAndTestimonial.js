@@ -7,6 +7,7 @@ import { SectionHeading } from "components/misc/Headings.js";
 import { SectionDescription } from "components/misc/Typography.js";
 import { PrimaryButton as PrimaryButtonBase } from "components/misc/Buttons.js";
 import { Container, ContentWithVerticalPadding } from "components/misc/Layouts.js";
+import Photo from "../../images/service/photo.jpg";
 
 const Row = tw.div`flex flex-col lg:flex-row justify-between items-center lg:pt-16 max-w-screen-2xl mx-auto sm:px-8`;
 const Column = tw.div``;
@@ -23,9 +24,9 @@ const Offsetbackground = tw.div`absolute inset-0 bg-gray-300 rounded xl:-mb-8`
 export default ({
   heading = "Senior Full Stack Engineer",
   description = "Years of Experience in Web and App development",
-  imageSrc = "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80",
+  imageSrc = Photo,
   imageDecoratorBlob = true,
-  primaryButtonUrl = "#",
+  primaryButtonUrl = "#hire",
   primaryButtonText = "Hire Me",
   buttonRounded = true,
 }) => {

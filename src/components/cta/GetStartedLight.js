@@ -24,7 +24,7 @@ const DecoratorBlob1 = tw(SvgDecoratorBlob1)`absolute bottom-0 left-0 w-80 h-80 
 const DecoratorBlob2 = tw(SvgDecoratorBlob1)`absolute top-0 right-0 w-80 h-80 transform  translate-x-20 -translate-y-64 text-primary-500 opacity-5`
 export default ({
   primaryLinkText = "Hire Me",
-  primaryLinkUrl = "http://timerse.com",
+  primaryLinkUrl = "#hire",
   pushDownFooter = true
 }) => {
   return (
